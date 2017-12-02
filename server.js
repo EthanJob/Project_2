@@ -13,13 +13,17 @@ const db = mongoose.connection;
 db.on('error', (err) => console.log(err.message));
 db.on('connected', () => console.log('Mongo running: ', mongoURI));
 
+// Controllers
+const picsController = require('./controllers/pictures.js');
+
 // Middleware
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+app.use('/home', picsController);
 
 // Root route
 app.get('/', (req, res) => {
-  res.send('server is running');
+  res.redirect('/home');
 });
 
 // Listener
