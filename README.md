@@ -1,2 +1,2 @@
 # Project_2
-Full functional web app
+Fully functional web app
