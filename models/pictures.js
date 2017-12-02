@@ -5,4 +5,5 @@ const picSchema = mongoose.Schema({
   url: { type: String, required: true }
 });
 
+
 module.exports = mongoose.model('Picture', picSchema);
