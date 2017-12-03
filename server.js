@@ -4,7 +4,7 @@ const app      = express();
 const PORT     = 3000;
 
 // Database connection
-const mongoURI = 'mongodb://localhost:27017/photo_comments'; // CHANGE
+const mongoURI = 'mongodb://localhost:27017/web_app';
 mongoose.connect(mongoURI, { useMongoClient: true});
 mongoose.Promise = global.Promise;
 
