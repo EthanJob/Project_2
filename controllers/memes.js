@@ -11,8 +11,9 @@ router.get('/test', async (req, res) => {
 });
 
 // Index Route
-router.get('/', (req, res) => {
-  res.render('index.ejs');
+router.get('/', async (req, res) => {
+  const allMemes = await Meme.find();
+  res.render('index.ejs', {allMemes});
 });
 
 // New Route
