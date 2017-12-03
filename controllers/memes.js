@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 
 // Models
-const Picture = require('../models/pictures.js');
+const Picture = require('../models/memes.js');
 
 // Index Route
 router.get('/', (req, res) => {
@@ -15,7 +15,7 @@ router.get('/new', (req, res) => {
 });
 
 // Show Route
-router.get('/pic', (req, res) => {
+router.get('/meme', (req, res) => {
   res.render('show.ejs');
 });
 
