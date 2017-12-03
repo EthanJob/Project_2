@@ -22,8 +22,9 @@ router.get('/new', (req, res) => {
 });
 
 // Show Route
-router.get('/meme', (req, res) => {
-  res.render('show.ejs');
+router.get('/meme/:id', async (req, res) => {
+  const oneMeme = await Meme.findById(req.params.id);
+  res.render('show.ejs', {oneMeme});
 });
 
 // Create Route

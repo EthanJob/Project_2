@@ -10,7 +10,9 @@
 
     <% for (let meme of allMemes) { %>
       <h2>Posted by <%= meme.posted_by %></h2>
-      <img src="<%= meme.url %>" alt="meme image">
+        <a href="/home/meme/<%= meme._id %>">
+          <img src="<%= meme.url %>" alt="meme image">
+        </a>
       <hr>
     <% } %>
   </body>
