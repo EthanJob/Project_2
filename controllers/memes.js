@@ -5,10 +5,15 @@ const router  = express.Router();
 const Meme = require('../models/memes.js');
 const Comments = require('../models/comments.js');
 
-// Test Route
-router.get('/test', async (req, res) => {
+// Test Routes
+router.get('/test/memes', async (req, res) => {
   const allMemes = await Meme.find();
   res.send({allMemes});
+});
+
+router.get('/test/comments', async (req, res) => {
+  const allComments = await Comments.find();
+  res.send({allComments});
 });
 
 // Index Route
