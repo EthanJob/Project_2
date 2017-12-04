@@ -9,6 +9,10 @@
       <% include ./partials/header.ejs %>
     </header>
 
+    <a href="/home/new">
+      <button type="button">New Meme</button>
+    </a>
+
     <% for (let meme of allMemes) { %>
       <h2>Posted by <%= meme.posted_by %></h2>
         <a href="/home/meme/<%= meme._id %>">

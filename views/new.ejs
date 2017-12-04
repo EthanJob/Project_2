@@ -5,7 +5,16 @@
     <title>New Meme</title>
   </head>
   <body>
-    <h1>New Meme</h1>
+    <header>
+      <% include ./partials/header.ejs %>
+    </header>
 
+    <h2>New Meme</h2>
+
+    <form action="/home" method="post">
+      <input class="input" type="text" name="posted_by" placeholder="Name"><br>
+      <input class="input" type="text" name="url" placeholder="Image URL"><br>
+      <button type="Submit">Post Meme</button>
+    </form>
   </body>
 </html>
