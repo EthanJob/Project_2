@@ -12,10 +12,8 @@
     <h2>New Meme</h2>
 
     <form action="/home" method="post">
-      <% const now = new Date(); %>
       <input class="input" type="text" name="posted_by" placeholder="Name"><br>
       <input class="input" type="text" name="url" placeholder="Image URL"><br>
-      <input type="hidden" name="date_posted" value="<%= now %>">
       <button type="Submit">Post Meme</button>
     </form>
   </body>

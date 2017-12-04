@@ -13,7 +13,7 @@ router.get('/test', async (req, res) => {
 
 // Index Route
 router.get('/', async (req, res) => {
-  const allMemes = await Meme.find();
+  const allMemes = await Meme.find().sort({createdAt: -1});
   res.render('index.ejs', {allMemes});
 });
 
