@@ -16,11 +16,13 @@ db.on('connected', () => console.log('Mongo running: ', mongoURI));
 
 // Controllers
 const memesController = require('./controllers/memes.js');
+const commentsController = require('./controllers/comments.js');
 
 // Middleware
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use('/home', memesController);
+app.use('/comments', commentsController);
 
 // Root route
 app.get('/', (req, res) => {

@@ -3,6 +3,7 @@ const router  = express.Router();
 
 // Models
 const Meme = require('../models/memes.js');
+const Comments = require('../models/comments.js');
 
 // Test Route
 router.get('/test', async (req, res) => {
@@ -24,7 +25,8 @@ router.get('/new', (req, res) => {
 // Show Route
 router.get('/meme/:id', async (req, res) => {
   const oneMeme = await Meme.findById(req.params.id);
-  res.render('show.ejs', {oneMeme});
+  const comments = await Comments.find( { meme: oneMeme._id } );
+  res.render('show.ejs', {oneMeme, comments});
 });
 
 // Create Route
