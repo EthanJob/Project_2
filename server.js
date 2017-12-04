@@ -1,10 +1,11 @@
 const express  = require('express');
 const mongoose = require('mongoose');
 const app      = express();
-const PORT     = 3000;
+const PORT     = process.env.PORT || 3000;
 
 // Database connection
-const mongoURI = 'mongodb://localhost:27017/web_app';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/web_app';
+
 mongoose.connect(mongoURI, { useMongoClient: true});
 mongoose.Promise = global.Promise;
 
@@ -29,6 +30,6 @@ app.get('/', (req, res) => {
 // Listener
 app.listen(PORT, () => {
   console.log("================");
-  console.log("Listening...");
+  console.log("Listening on Port:", PORT);
   console.log("================");
 });
