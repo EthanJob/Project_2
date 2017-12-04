@@ -5,8 +5,9 @@
     <title>Home</title>
   </head>
   <body>
-    <h1>Home Page</h1>
-    <hr>
+    <header>
+      <% include ./partials/header.ejs %>
+    </header>
 
     <% for (let meme of allMemes) { %>
       <h2>Posted by <%= meme.posted_by %></h2>

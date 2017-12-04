@@ -5,11 +5,9 @@
     <title>Meme</title>
   </head>
   <body>
-    <a href="/home">
-      <button type="button">Home</button>
-    </a>
-
-    <h1>Meme</h1>
+    <header>
+      <% include ./partials/header.ejs %>
+    </header>
 
     <h3>Posted by <%= oneMeme.posted_by %></h3>
     <img src="<%= oneMeme.url %>" alt="meme image">
