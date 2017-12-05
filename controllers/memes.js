@@ -44,4 +44,11 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Delete Route
+router.delete('/meme/:id', async (req, res) => {
+  const meme = await Meme.findByIdAndRemove(req.params.id);
+  await Comments.remove({meme: meme._id});
+  res.redirect('/home');
+});
+
 module.exports = router;

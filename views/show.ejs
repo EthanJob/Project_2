@@ -27,8 +27,12 @@
       <input type="text" name="author" placeholder="Author" value="Anonymous"/><br>
       <input type="text" name="content" placeholder="Comment"/><br>
       <input type="hidden" name="meme" value="<%= oneMeme._id %>"/>
-      <%# <input type="submit"/>%>
       <button type="submit" name="button">Comment</button>
+    </form>
+
+    <hr>
+    <form action="/home/meme/<%=oneMeme.id%>?_method=DELETE" method="post">
+      <button>Delete</button>
     </form>
   </body>
 </html>

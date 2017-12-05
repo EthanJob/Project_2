@@ -1,4 +1,5 @@
 const express  = require('express');
+const methodOverride =require('method-override');
 const mongoose = require('mongoose');
 const app      = express();
 const PORT     = process.env.PORT || 3000;
@@ -21,6 +22,7 @@ const commentsController = require('./controllers/comments.js');
 // Middleware
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+app.use(methodOverride('_method'));
 app.use('/home', memesController);
 app.use('/comments', commentsController);
 
