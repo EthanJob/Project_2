@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/EthanJob/Project_2#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "method-override": "^2.3.10",

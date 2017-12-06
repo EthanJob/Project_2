@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Meme</title>
+    <% include ./partials/head.ejs %>
   </head>
   <body>
     <header>
@@ -24,8 +25,14 @@
     <h3>Add a Comment</h3>
 
     <form action="/comments" method="post">
-      <input type="text" name="author" placeholder="Author" value="Anonymous"/><br>
-      <input type="text" name="content" placeholder="Comment"/><br>
+      <div class="form-group">
+        <label for="authorInput">Author</label>
+        <input id="authorInput" class="form-control author" type="text" name="author" placeholder="Author" value="Anonymous"/>
+      </div>
+      <div class="form-group">
+        <label for="contentInput">Comment</label>
+        <textarea id="contentInput" class="form-control" type="text" name="content" rows="3"/></textarea>
+      </div>
       <input type="hidden" name="meme" value="<%= oneMeme._id %>"/>
       <button type="submit" name="button">Comment</button>
     </form>

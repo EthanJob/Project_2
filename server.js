@@ -20,6 +20,7 @@ const memesController = require('./controllers/memes.js');
 const commentsController = require('./controllers/comments.js');
 
 // Middleware
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -33,7 +34,7 @@ app.get('/', (req, res) => {
 
 // Listener
 app.listen(PORT, () => {
-  console.log("================");
+  console.log("========================");
   console.log("Listening on Port:", PORT);
-  console.log("================");
+  console.log("========================");
 });
