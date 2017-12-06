@@ -12,7 +12,7 @@
     <h3>Posted by <%= oneMeme.posted_by %></h3>
     <img src="<%= oneMeme.url %>" alt="meme image">
 
-    <h3>Comments</h3>
+    <h2>Comments</h2>
     <hr>
 
     <% for (let comment of comments) { %>
@@ -31,8 +31,12 @@
     </form>
 
     <hr>
+    <a href="/home/meme/<%=oneMeme.id%>/edit">
+      <button type="button">Edit Post</button>
+    </a>
+
     <form action="/home/meme/<%=oneMeme.id%>?_method=DELETE" method="post">
-      <button>Delete</button>
+      <button>Delete Post</button>
     </form>
   </body>
 </html>

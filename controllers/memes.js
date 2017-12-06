@@ -44,6 +44,27 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Edit Route
+router.get('/meme/:id/edit', async (req, res) => {
+  try {
+  const meme = await Meme.findById(req.params.id);
+  const comments = await Comments.find({meme: meme._id});
+  res.render('edit.ejs', {meme, comments});
+} catch (err) {
+  res.send(err.message);
+}
+});
+
+// Update Route
+router.put('/meme/:id', async (req, res) => {
+  try {
+  const meme = await Meme.findByIdAndUpdate(req.params.id, req.body, {new: true});
+  res.redirect('/home/meme/' + meme.id);
+} catch (err) {
+  res.send(err.message);
+}
+});
+
 // Delete Route
 router.delete('/meme/:id', async (req, res) => {
   const meme = await Meme.findByIdAndRemove(req.params.id);

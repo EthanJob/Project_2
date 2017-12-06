@@ -1,7 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-// Model
+// Models
+const Meme = require('../models/memes.js');
 const Comments = require('../models/comments.js');
 
 // Index Route
@@ -12,9 +13,18 @@ router.get('/', async (req, res) => {
 
 // Show Route
 router.post('/', async (req, res) => {
-  // console.log(req.body);
   try {
     const createdComment = await Comments.create(req.body);
+    res.redirect('back');
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
+// Delete Route
+router.delete('/:id', async (req, res) => {
+  try {
+    const comment = await Comments.findByIdAndRemove(req.params.id);
     res.redirect('back');
   } catch (err) {
     res.send(err.message);
