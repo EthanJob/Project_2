@@ -10,37 +10,47 @@
       <% include ./partials/header.ejs %>
     </header>
 
-    <h3>Posted by <%= oneMeme.posted_by %></h3>
-    <img src="<%= oneMeme.url %>" alt="meme image">
+    <div class="container">
 
-    <h2>Comments</h2>
-    <hr>
+      <div class="index-posts">
+        <h1>Posted by <%= oneMeme.posted_by %></h1>
+        <img src="<%= oneMeme.url %>" alt="meme image">
 
-    <% for (let comment of comments) { %>
-      <h3><%= comment.author %></h3>
-      <p><%= comment.content %></p>
-      <hr>
-    <% } %>
+        <h2>Comments</h2>
+        <hr>
 
-    <h3>Add a Comment</h3>
+        <div class="comments">
+        <% for (let comment of comments) { %>
+          <div class="comment">
+          <b><%= comment.author %></b>
+          <p>: <%= comment.content %></p>
+          </div>
+        <% } %>
+        </div>
+        <hr>
 
-    <form action="/comments" method="post">
-      <div class="form-group">
-        <label for="authorInput">Author</label>
-        <input id="authorInput" class="form-control author" type="text" name="author" placeholder="Author" value="Anonymous"/>
+        <h3>Add a Comment</h3>
+
+        <form action="/comments" method="post">
+          <div class="form-group">
+            <label for="authorInput">Author</label>
+            <input id="authorInput" class="form-control author" type="text" name="author" placeholder="Author" value="Anonymous"/>
+          </div>
+          <div class="form-group">
+            <label for="contentInput">Comment</label>
+            <textarea id="contentInput" class="form-control" type="text" name="content" rows="3"/></textarea>
+          </div>
+          <input type="hidden" name="meme" value="<%= oneMeme._id %>"/>
+          <button type="submit" name="button">Comment</button>
+        </form>
+
+        <hr>
+        <a href="/home/meme/<%=oneMeme.id%>/edit">
+          <button type="button">Edit Post</button>
+        </a>
       </div>
-      <div class="form-group">
-        <label for="contentInput">Comment</label>
-        <textarea id="contentInput" class="form-control" type="text" name="content" rows="3"/></textarea>
-      </div>
-      <input type="hidden" name="meme" value="<%= oneMeme._id %>"/>
-      <button type="submit" name="button">Comment</button>
-    </form>
 
-    <hr>
-    <a href="/home/meme/<%=oneMeme.id%>/edit">
-      <button type="button">Edit Post</button>
-    </a>
+    </div>
 
   </body>
 </html>

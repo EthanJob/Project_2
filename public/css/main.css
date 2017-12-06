@@ -1,12 +1,18 @@
 body {
   padding-top: 70px;
   background: url('/images/congruent_outline.png');
+  background-color: black;
   background-attachment: fixed;
   color: white;
+  font-family: 'Inconsolata', monospace;
 }
 
 input {
   color: black;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .index-img {
@@ -19,6 +25,11 @@ input {
   text-align: center;
 }
 
+.comment {
+  display: flex;
+  font-size: 25px;
+}
+
 .form-control {
   max-width: 300px;
 }
@@ -28,7 +39,8 @@ input {
 }
 
 .container {
-  padding-top: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   height: 100%;
   width: 50%;
   display: flex;
@@ -38,11 +50,13 @@ input {
 
 .title {
   color: white;
+  font-family: 'Londrina Outline';
+  font-size: 60px;
 }
 
 .navbar {
   padding-bottom: 10px;
-  background-color: #3423A6;
+  background-color: black;
 }
 
 .main-header {
@@ -53,11 +67,14 @@ input {
 .new-meme {
   position: absolute;
   right: 20px;
-  top: 25px;
+  top: 35px;
 }
 
 button {
   padding: 5px;
   color: black;
-  border-radius: 10px;
+  border-radius: 5px;
+  border-color: #00E521;
+  background-color: #00E521;
+  font-size: 20px;
 }
