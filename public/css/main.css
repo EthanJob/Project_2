@@ -1,12 +1,22 @@
 body {
   padding-top: 70px;
-  background-color: #465362;
+  background: url('/images/congruent_outline.png');
+  background-attachment: fixed;
+  color: white;
+}
+
+input {
   color: black;
 }
 
 .index-img {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid white;
+}
+
+.index-posts {
+  text-align: center;
 }
 
 .form-control {
@@ -20,6 +30,7 @@ body {
 .container {
   padding-top: 25px;
   height: 100%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
