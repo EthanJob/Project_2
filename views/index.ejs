@@ -18,9 +18,12 @@
         <a href="/home/meme/<%= meme._id %>">
           <img class="index-img" src="<%= meme.url %>" alt="meme image">
         </a>
+        <div class="likes">
+          <p class="likeNum">likes: <%= meme.likes %></p>
+        </div>
       <hr>
     <% } %>
-    </div>
+  </div>
 
     </div>
   </body>

@@ -72,4 +72,14 @@ router.delete('/meme/:id', async (req, res) => {
   res.redirect('/home');
 });
 
+// Like Route
+router.put('/meme/like/:id', async (req, res) => {
+  try {
+    const oneMeme = await Meme.findByIdAndUpdate(req.params.id, { $inc: { likes: 1} } );
+    res.redirect('back');
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
 module.exports = router;

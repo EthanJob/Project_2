@@ -125,3 +125,8 @@ button {
 label {
   font-size: 20px;
 }
+
+.likes {
+  text-align: right;
+  padding: 12px 10px 0 0;
+}
