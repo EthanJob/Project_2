@@ -23,11 +23,29 @@ a:hover {
 
 .index-posts {
   text-align: center;
+  max-width: 400px;
+}
+
+.show-posts {
+  text-align: center;
+  min-width: 80%;
+}
+
+.comment-author {
+  display: flex;
+  font-size: 25px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.cmnt-auth {
+  color: DodgerBlue;
 }
 
 .comment {
   display: flex;
   font-size: 25px;
+  text-align: left;
 }
 
 .form-control {
@@ -39,10 +57,10 @@ a:hover {
 }
 
 .container {
-  padding-top: 30px;
+  padding-top: 75px;
   padding-bottom: 30px;
   height: 100%;
-  width: 50%;
+  min-width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +69,7 @@ a:hover {
 .title {
   color: white;
   font-family: 'Londrina Outline';
-  font-size: 60px;
+  font-size: 54px;
 }
 
 .navbar {
@@ -66,15 +84,44 @@ a:hover {
 
 .new-meme {
   position: absolute;
-  right: 20px;
-  top: 35px;
+  right: 30px;
+  top: 50px;
+}
+
+.decription {
+  font-size: 18px;
+  color: white;
+  font-style: italic;
 }
 
 button {
-  padding: 5px;
+  padding: 5px 15px 5px 15px;
   color: black;
   border-radius: 5px;
   border-color: #00E521;
   background-color: #00E521;
+  font-size: 20px;
+}
+
+.del-btn {
+  border-color: red;
+  background-color: red;
+}
+
+.edit-btn, .updateBtn {
+  border-color: DodgerBlue;
+  background-color: DodgerBlue;
+}
+
+.del-comment {
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.form-group, .addComment {
+  text-align: left;
+}
+
+label {
   font-size: 20px;
 }

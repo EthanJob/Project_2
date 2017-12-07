@@ -9,33 +9,54 @@
     <header>
       <% include ./partials/header.ejs %>
     </header>
+    <div class="container">
+
+    <div class="show-posts">
+
+    <h1>Current Image</h1>
+    <img src="<%= meme.url %>" alt="meme image">
+
     <h2>Edit Post</h2>
+    <hr>
 
     <form action="/home/meme/<%=meme.id%>?_method=PUT" method="post">
-      <label for="author">Author: </label>
-      <input type="text" name="posted_by" value="<%=meme.posted_by%>"><br>
-      <label for="image">Image URL: </label>
-      <input type="text" name="url" value="<%=meme.url%>">
-      <button type="Submit">Update</button>
-    </form>
+      <div class="form-group">
+        <label for="author">Author: </label>
+        <input type="text" class="form-control" name="posted_by" value="<%=meme.posted_by%>">
+      </div>
 
-    <hr>
-    <h3>Current Image</h3>
-    <img src="<%= meme.url %>" alt="meme image">
+      <div class="form-group">
+        <label for="image">Image URL: </label>
+        <input type="text" class="form-control" name="url" value="<%=meme.url%>">
+      </div>
+
+      <div class="addComment">
+        <button class="updateBtn" type="Submit">Update Post</button>
+      </div>
+
+    </form>
 
     <hr>
     <h2>Delete Comments</h2>
+    <div class="comments">
     <% for (let comment of comments) { %>
-      <h3><%= comment.author %></h3>
-      <p><%= comment.content %></p>
-      <form action="/comments/<%=comment.id%>?_method=DELETE" method="post">
-        <button>Delete</button>
-      </form>
+      <div class="comment">
+        <b><%= comment.author %></b>
+        <p>: <%= comment.content %></p>
+      </div>
+      <div class="del-comment">
+        <form action="/comments/<%=comment.id%>?_method=DELETE" method="post">
+          <button class="del-btn">Delete</button>
+        </form>
+      </div>
     <% } %>
+    </div>
 
     <hr>
     <form action="/home/meme/<%=meme.id%>?_method=DELETE" method="post">
-      <button>Delete Post</button>
+      <button class="del-btn">Delete Post</button>
     </form>
+    </div>
+    </div>
   </body>
 </html>

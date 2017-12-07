@@ -12,44 +12,48 @@
 
     <div class="container">
 
-      <div class="index-posts">
+      <div class="show-posts">
         <h1>Posted by <%= oneMeme.posted_by %></h1>
         <img src="<%= oneMeme.url %>" alt="meme image">
 
-        <h2>Comments</h2>
+        <h2 class="addComment">Comments</h2>
         <hr>
 
         <div class="comments">
         <% for (let comment of comments) { %>
+          <div class="comment-author">
+            <b class="cmnt-auth"><%= comment.author %>:</b>
+          </div>
           <div class="comment">
-          <b><%= comment.author %></b>
-          <p>: <%= comment.content %></p>
+            <p><%= comment.content %></p>
           </div>
         <% } %>
         </div>
         <hr>
 
-        <h3>Add a Comment</h3>
+        <h3 class="addComment">Add a Comment</h3>
 
         <form action="/comments" method="post">
           <div class="form-group">
             <label for="authorInput">Author</label>
             <input id="authorInput" class="form-control author" type="text" name="author" placeholder="Author" value="Anonymous"/>
           </div>
+
           <div class="form-group">
             <label for="contentInput">Comment</label>
             <textarea id="contentInput" class="form-control" type="text" name="content" rows="3"/></textarea>
           </div>
-          <input type="hidden" name="meme" value="<%= oneMeme._id %>"/>
-          <button type="submit" name="button">Comment</button>
+          <div class="addComment">
+            <input type="hidden" name="meme" value="<%= oneMeme._id %>"/>
+            <button type="submit">Comment</button>
+          </div>
         </form>
 
         <hr>
         <a href="/home/meme/<%=oneMeme.id%>/edit">
-          <button type="button">Edit Post</button>
+          <button class="edit-btn" type="button">Edit Post</button>
         </a>
       </div>
-
     </div>
 
   </body>
