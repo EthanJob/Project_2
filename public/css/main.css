@@ -126,7 +126,23 @@ label {
   font-size: 20px;
 }
 
-.likes {
+.likeNum {
   text-align: right;
+}
+
+.likes {
   padding: 12px 10px 0 0;
+}
+
+.addComment {
+  text-align: left;
+  width: 85%;
+}
+
+.comment-like {
+  display: flex;
+}
+
+.like-btn {
+  padding-top: 25px;
 }

@@ -16,11 +16,13 @@
         <h1>Posted by <%= oneMeme.posted_by %></h1>
         <img src="<%= oneMeme.url %>" alt="meme image">
 
-        <h2 class="addComment">Comments</h2>
-        <div class="likes">
+        <div class="comment-like">
+          <h2 class="addComment">Comments</h2>
+          <div class="like-btn">
           <form action="/home/meme/like/<%=oneMeme.id%>?_method=put" method="POST">
-            <button class="likeNum">likes: <%= oneMeme.likes %></button>
+            <button>likes: <%= oneMeme.likes %></button>
           </form>
+          </div>
         </div>
         <hr>
 
