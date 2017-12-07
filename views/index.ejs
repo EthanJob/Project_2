@@ -19,7 +19,9 @@
           <img class="index-img" src="<%= meme.url %>" alt="meme image">
         </a>
         <div class="likes">
-          <h4 class="likeNum">likes: <%= meme.likes %></h4>
+          <h4 class="likeNum">
+          <span class="glyphicon glyphicon-thumbs-up"  aria-hidden="true"></span> <%= meme.likes %>
+          </h4>
         </div>
       <hr>
     <% } %>

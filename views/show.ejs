@@ -20,7 +20,9 @@
           <h2 class="addComment">Comments</h2>
           <div class="like-btn">
           <form action="/home/meme/like/<%=oneMeme.id%>?_method=put" method="POST">
-            <button>likes: <%= oneMeme.likes %></button>
+            <button class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-thumbs-up"  aria-hidden="true"></span> <%= oneMeme.likes %>
+            </button>
           </form>
           </div>
         </div>

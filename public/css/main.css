@@ -103,6 +103,20 @@ button {
   font-size: 20px;
 }
 
+.btn {
+  padding: 5px 15px 5px 15px;
+  color: black;
+  border-radius: 5px;
+  border-color: DodgerBlue;
+  background-color: DodgerBlue;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: DodgerBlue;
+  border-color: DodgerBlue;
+}
+
 .del-btn {
   border-color: red;
   background-color: red;
