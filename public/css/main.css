@@ -160,3 +160,11 @@ label {
 .like-btn {
   padding-top: 25px;
 }
+
+.memeForm {
+  text-align: center;
+}
+
+.comment, .comment-author {
+  padding-left: 2%;
+}
